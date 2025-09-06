@@ -1,3 +1,5 @@
+import time
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -53,5 +55,6 @@ def scrape_all_pages() -> list[str]:
             break
 
         page_number += 1
+        time.sleep(5)
 
-    return all_episode_paths
+    return list(reversed(all_episode_paths))
