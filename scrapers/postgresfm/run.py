@@ -17,11 +17,8 @@ def run() -> list[dict[str, str]]:
 
         transcript = scrape_episode_details(episode_path)
         slug = episode_path.split("/")[-1]
-        filename = f"data/postgresfm/{idx + 1:03d}_{slug}.txt"
+        filename = f"data/postgresfm/transcripts/{idx + 1:03d}_{slug}.txt"
         write_to_file(file_path=filename, content=transcript)
         time.sleep(5)
 
     return episodes_data
-
-
-run()
